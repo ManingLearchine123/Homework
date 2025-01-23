@@ -21,8 +21,7 @@ def signup(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            auth_login(request, user)
+            form.save()
             return redirect("index")
     else:
         form = UserCreationForm()
