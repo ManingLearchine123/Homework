@@ -40,8 +40,14 @@ INSTALLED_APPS = [
     'memo',
     'user',
 'rest_framework',
+'rest_framework.authtoken',  # DRF의 Token Authentication 추가
+    'user'
 ]
-
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',  # Token 기반 인증
+    ],
+}
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",

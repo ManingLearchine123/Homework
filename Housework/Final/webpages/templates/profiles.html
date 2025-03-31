@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block c %}
+<h1>Profile page of {{u.name}}</h1>
+<a href="{% url 'homepage'%}">Return to homepage</a>
+{% if is_owner %}
+<a href="{%url 'u'%}" Edit acc>Edit acc</a>
+{% else %}
+<a send friend req><button>send friend req</button></a>
+{% endif %}
+{% endblock c %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+{%block c%}
+<form action='chatbot' method='POST'>
+    {% csrf_token %}
+    <label="message">메세지를 입력하세요</label>
+    <input type="text" id="message" placeholder="메세지를 입력하세요" required>
+    <button type="submit">입력</button>
+</form>
+{%endblock%}
+</body>
+</html>

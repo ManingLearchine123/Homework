@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block c %}
+<form action="{% url 'u' %}" method="POST">
+    {% csrf_token %}
+    {{f.as_p}}
+    
+    <button type="submit">Change user data</button>
+    <form action="{% url 'd' %}" method="POST"><button type='submit'>Delete account</button></form>
+</form>
+{% endblock c %}

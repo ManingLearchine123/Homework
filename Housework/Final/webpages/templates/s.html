@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block c %}
+<form action="{%url "s"%}" method="POST">
+    {% csrf_token %}
+    {{f.as_p}}
+    <button type="submit">Sign up</button>
+    {% if e %}
+{{e}}
+{% endif %}
+</form>
+{% endblock c %}
